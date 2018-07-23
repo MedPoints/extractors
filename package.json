@@ -1,0 +1,24 @@
+{
+  "name": "data-importers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MedPoints/data-importers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MedPoints/data-importers/issues"
+  },
+  "homepage": "https://github.com/MedPoints/data-importers#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "csv": "^3.1.0",
+    "csv-parse": "^2.5.0"
+  }
+}
