@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "csv": "^3.1.0",
-    "csv-parse": "^2.5.0"
+    "csv-parse": "^2.5.0",
+    "sax": "1.2.4"
   }
 }
