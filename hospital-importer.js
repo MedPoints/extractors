@@ -11,12 +11,12 @@ const axios = require('axios');
         var uniqueSpec = new Set(specs);
 
         for(let spec of uniqueSpec){
-            await axios.post('http://46.101.121.69:8080/api/specializations', { name : spec});
+            await axios.post('/api/specializations', { name : spec});
             counter++;
             console.log(counter);
         }
 
-        let savedSpecs = await axios.get(`http://46.101.121.69:8080/api/specializations?count=${uniqueSpec.size}`);
+        let savedSpecs = await axios.get(`/api/specializations?count=${uniqueSpec.size}`);
         for(let hospital of hospitals){
             let hospitalSpecs = hospital.specializations.split(',').map(x => x.trim());
             let mappedSpecs = [];
@@ -26,7 +26,7 @@ const axios = require('axios');
             }
             hospital.specializations = mappedSpecs;
 
-            await axios.post('http://46.101.121.69:8080/api/hospitals', hospital);
+            await axios.post('/api/hospitals', hospital);
             counter++;
             console.log(counter);
         }
