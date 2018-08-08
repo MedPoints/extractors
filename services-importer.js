@@ -6,8 +6,8 @@ const services = JSON.parse(fs.readFileSync('services.json', 'utf8')).result;
     try {
         for(let service of services){
             if(service.name === 'First examination'){
-                let hospitalsCount = await axios.get(`/api/hospitals/count`);
-                let hospitals = await axios.get(`/api/hospitals?count=${hospitalsCount.data.result}`);
+                let hospitalsCount = await axios.get(`http://localhost:8080/api/hospitals/count`);
+                let hospitals = await axios.get(`http://localhost:8080/api/hospitals?count=${hospitalsCount.data.result}`);
 
                 let hospitalsProviders = hospitals.data.result.data.map(hospital => {
                     var hospital = {
@@ -23,7 +23,7 @@ const services = JSON.parse(fs.readFileSync('services.json', 'utf8')).result;
                 }
             }
 
-            await axios.post(`/api/services`, service);
+            await axios.post(`http://localhost:8080/api/services`, service);
         }
 
 
